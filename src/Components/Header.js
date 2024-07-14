@@ -164,29 +164,33 @@ function Header({ scrollToSection, contact, home }) {
                 >
                   Home
                 </nav>
-                <nav
-                  className={`border-b border-b-gray-200 p-2  w-full ${activeNav === "aboutUs" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                    // handleNavClick("aboutUs", aboutUs);
-                    setHamburger(false);
-                  }}
-                >
-                  About Us
-                </nav>
-                <nav
-                  className={`border-b border-b-gray-200 p-2 flex justify-start gap-[8px] items-center w-full ${activeNav === "services" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                    // handleNavClick("services", services);
-                    setHamburger(false);
-                  }}
-                >
-                  Services{" "}
-                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.59143 7.5L10.5914 12.5L15.5914 7.5" stroke="currentColor" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </nav>
+                <Link to="/about">
+                  <nav
+                    className={`border-b border-b-gray-200 p-2  w-full ${activeNav === "aboutUs" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      // handleNavClick("aboutUs", aboutUs);
+                      setHamburger(false);
+                    }}
+                  >
+                    About Us
+                  </nav>
+                </Link>
+                <Link onClick={() => window.scrollTo(0, 0)} to="/services">
+                  <nav
+                    className={`border-b border-b-gray-200 p-2 flex justify-start gap-[8px] items-center w-full ${activeNav === "services" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      // handleNavClick("services", services);
+                      setHamburger(false);
+                    }}
+                  >
+                    Services{" "}
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.59143 7.5L10.5914 12.5L15.5914 7.5" stroke="currentColor" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </nav>
+                </Link>
                 <nav
                   className={`border-b border-b-gray-200 p-2  w-full ${activeNav === "contact" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
                   onClick={() => {
