@@ -1,13 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #fff;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: fit-content;
+  font-family: "Inter", sans-serif;
+}
+.hamburger-menu {
+  transition: transform 1.3s ease-in-out;
+  transform: translateX(-100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hamburger-menu.visible {
+  transform: translateX(0);
+}
+
+.overlay {
+  transition: opacity 1.3s ease-in-out;
+}
+
+.overlay.visible {
+  opacity: 1;
 }
