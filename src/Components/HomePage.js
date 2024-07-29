@@ -159,7 +159,7 @@ function HomePage() {
               gatherings.
             </p>
           </section>
-          <section className=" gap-[12px] h-fit w-fit 100:flex-col md:flex-row flex items-center">
+          <section className=" gap-[12px] h-fit w-fit 100:flex-col-reverse  md:flex-row flex items-center">
             <Link onClick={() => window.scrollTo(0, 0)} className="w-full" to="/about">
               {" "}
               <nav className="100:w-full md:w-fit  justify-center h-[48px] rounded-lg  px-7 py-4 bg-white text-center flex items-center shadow border border-zinc-400  text-neutral-500 text-base font-medium leading-7">Learn more</nav>

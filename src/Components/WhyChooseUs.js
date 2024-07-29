@@ -19,7 +19,7 @@ function WhyChooseUs() {
                 Experience Excellence in Academic Services & Event Management with High-Flyers Consulting. Our seasoned team and top-notch facilities ensure unmatched results for your educational and corporate endeavors.{" "}
               </p>
             </section>
-            <section className=" gap-[12px] h-fit w-fit 100:flex-col md:flex-row flex items-center">
+            <section className=" gap-[12px] h-fit w-fit 100:flex-col-reverse md:flex-row flex items-center">
               <Link onClick={() => window.scrollTo(0, 0)} className="w-full" to="/about">
                 {" "}
                 <nav className="lg:w-fit h-[48px] 100:w-full rounded-lg  px-7 py-4 bg-white text-center justify-center flex items-center shadow border border-zinc-400  text-neutral-500 text-base font-medium leading-7">Learn more</nav>

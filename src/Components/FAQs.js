@@ -48,7 +48,7 @@ function FAQs() {
                   <h4 className="self-stretch text-neutral-700 text-xl font-medium leading-loose">Still have questions?</h4>
                   <p className=" text-neutral-500 text-lg font-normal leading-7">Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
                 </div>
-                <a href="https://wa.me/07071859574" target="_blank">
+                <a href="https://wa.me/2347071859574" target="_blank">
                   <div className="px-7 w-fit text-base font-medium text-center flex items-center  h-[48px] bg-[#870AE6] text-[#fff] rounded-[8px]">Get in touch</div>
                 </a>
               </section>
