@@ -20,11 +20,11 @@ function WhyChooseUs() {
               </p>
             </section>
             <section className=" gap-[12px] h-fit w-fit 100:flex-col md:flex-row flex items-center">
-              <Link className="w-full" to="/about">
+              <Link onClick={() => window.scrollTo(0, 0)} className="w-full" to="/about">
                 {" "}
                 <nav className="lg:w-fit h-[48px] 100:w-full rounded-lg  px-7 py-4 bg-white text-center justify-center flex items-center shadow border border-zinc-400  text-neutral-500 text-base font-medium leading-7">Learn more</nav>
               </Link>{" "}
-              <Link className="w-full" to="/quote">
+              <Link onClick={() => window.scrollTo(0, 0)} className="w-full" to="/quote">
                 <div className="px-7 w-full whitespace-nowrap text-base font-medium text-center flex items-center  h-[48px] bg-[#870AE6] text-[#fff] rounded-[8px]">Request a Quote</div>
               </Link>
             </section>

@@ -3,7 +3,7 @@ import hall from "./Images/hall1.jpeg";
 import Select from "react-select";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-
+// import axios from "axios";
 const services = [
   { value: "Academic Services", label: "Academic Services" },
   { value: "Event Facilities", label: "Event Facilities" },
@@ -37,9 +37,30 @@ function Quote() {
       preferredContactMethod: null,
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log(values);
-      // Here you can handle form submission (e.g., send the data to an API)
+
+      const formData = {
+        ...values,
+      };
+      try {
+        const response = await fetch("http://localhost:5000/api/contact", {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.status === 200) {
+          console.log("success");
+        } else {
+          console.log("error");
+        }
+      } catch (error) {
+        console.log("An Error Occurred: ", error);
+      }
     },
   });
 
@@ -57,7 +78,7 @@ function Quote() {
               </div>
             </Link>
             <nav className=" p-2   text-[16px] hover:underline hover:text-[#870AE6]   font-medium">
-              <a href="mailto:https://highflyers@gmail.com">Highflyers@gmail.com</a>
+              <a href="mailto:https://highflyers2024.consulting@gmail.com"> highflyers2024.consulting@gmail.com</a>
             </nav>
           </div>
         </section>
@@ -108,7 +129,7 @@ function Quote() {
                     id="email"
                     {...formik.getFieldProps("email")}
                   />
-                  {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                  {formik.touched.email && formik.errors.email ? <div className=" text-[#B7192C]">{formik.errors.email}</div> : null}
                 </section>
                 <section className="gap-[6px] flex flex-col w-full">
                   <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="phoneNumber">
@@ -141,7 +162,17 @@ function Quote() {
                   </label>
                   <Select
                     placeholder="Select services"
-                    className=" text-base font-normal leading-normal w-full shadow border"
+                    className=" text-base font-normal leading-normal w-full "
+                    theme={(theme) => ({
+                      ...theme,
+                      colors: {
+                        ...theme.colors,
+                        primary50: "#F4E5FF2",
+                        primary25: "#B0B0B0",
+                        placeholder: "#3d3d3d",
+                        primary: "#F4E5FF2",
+                      },
+                    })}
                     styles={{
                       control: (baseStyles, state) => ({
                         ...baseStyles,
@@ -151,6 +182,7 @@ function Quote() {
                         paddingRight: "15px",
                         borderRadius: "8px",
                         background: "#fff",
+                        boxShadow: "0px 1px 3px 0px rgb(0,0, 0, 0.2)",
                         placeholder: "#9E9E9E",
                         outline: "#870AE6",
                         fontWeight: "normal",
@@ -178,7 +210,17 @@ function Quote() {
                   </label>
                   <Select
                     placeholder="Select contact method"
-                    className="placeholder:text-neutral-500 text-base font-normal leading-normal w-full shadow border"
+                    className=" text-base font-normal leading-normal w-full "
+                    theme={(theme) => ({
+                      ...theme,
+                      colors: {
+                        ...theme.colors,
+                        primary50: "#F4E5FF2",
+                        primary25: "#B0B0B0",
+                        placeholder: "#3d3d3d",
+                        primary: "#F4E5FF2",
+                      },
+                    })}
                     styles={{
                       control: (baseStyles, state) => ({
                         ...baseStyles,
@@ -188,6 +230,7 @@ function Quote() {
                         paddingRight: "15px",
                         borderRadius: "8px",
                         background: "#fff",
+                        boxShadow: "0px 1px 3px 0px rgb(0,0, 0, 0.2)",
                         placeholder: "#9E9E9E",
                         outline: "#870AE6",
                         fontWeight: "normal",

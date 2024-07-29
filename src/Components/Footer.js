@@ -10,21 +10,19 @@ function Footer() {
             <section className=" 100:w-[220px] lg:w-full  flex-col gap-[16px] flex  items-start">
               <h3 className="self-stretch text-zinc-500 text-sm font-semibold  leading-tight">Company</h3>
               <div className=" w-full flex-col gap-[12px] flex  items-start">
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">About us</h4>
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">Press</h4>
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">News</h4>
+                <Link onClick={() => window.scrollTo(0, 0)} to="/about">
+                  <h4 className=" hover:text-purple-700 hover:underline text-neutral-500 text-base font-medium  leading-normal">About us</h4>
+                </Link>
+                <Link
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="                
+"
+                >
+                  <h4 className=" hover:text-purple-700 hover:underline text-neutral-500 text-base font-medium  leading-normal">Services</h4>
+                </Link>
                 <h4 className="text-neutral-500 text-base font-medium  leading-normal">Contact</h4>
               </div>
             </section>
-            <section className=" 100:w-[220px] lg:w-full  flex-col gap-[16px] flex  items-start">
-              <h3 className="self-stretch text-zinc-500 text-sm font-semibold  leading-tight">Resources</h3>
-              <div className=" w-full flex-col gap-[12px] flex  items-start">
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">Newsletter</h4>
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">Events</h4>
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">Help centre</h4>
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">Tutorials</h4>
-              </div>
-            </section>{" "}
             <section className=" 100:w-[220px] lg:w-full  flex-col gap-[16px] flex  items-start">
               <h3 className="self-stretch text-zinc-500 text-sm font-semibold  leading-tight">Social</h3>
               <div className=" w-full flex-col gap-[12px] flex  items-start">

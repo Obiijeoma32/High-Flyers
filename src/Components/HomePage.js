@@ -129,9 +129,9 @@ function HomePage() {
                 </svg>
                 Showreel
               </nav>
-              <Link className="  w-full" to="">
+              <a href="https://wa.me/07071859574" target="_blank">
                 <div className="px-7 100:w-full md:w-40 text-[16px] justify-center font-medium text-center flex items-center  h-14 bg-[#870AE6] text-[#fff] rounded-[8px]">Chat with us</div>
-              </Link>
+              </a>
             </section>
           </div>
           <div className=" w-[85%] 100:h-[300px] relative flex  items-center md:h-[733px] 2xl:h-[933px] p-[50px] bg-purple-700">
@@ -160,11 +160,11 @@ function HomePage() {
             </p>
           </section>
           <section className=" gap-[12px] h-fit w-fit 100:flex-col md:flex-row flex items-center">
-            <Link className="w-full" to="/about">
+            <Link onClick={() => window.scrollTo(0, 0)} className="w-full" to="/about">
               {" "}
               <nav className="100:w-full md:w-fit  justify-center h-[48px] rounded-lg  px-7 py-4 bg-white text-center flex items-center shadow border border-zinc-400  text-neutral-500 text-base font-medium leading-7">Learn more</nav>
             </Link>{" "}
-            <Link className="w-full" to="/quote">
+            <Link onClick={() => window.scrollTo(0, 0)} className="w-full" to="/quote">
               <div className="px-7 w-full text-base whitespace-nowrap font-medium text-center flex items-center  h-[48px] bg-[#870AE6] text-[#fff] rounded-[8px]">Request a Quote</div>
             </Link>
           </section>

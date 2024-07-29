@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "./Images/HF.svg";
 import logo2 from "./Images/Hf-Full.svg";
 import { useEffect, useState } from "react";
 
 function Header({ scrollToSection, contact, home }) {
-  const [activeNav, setActiveNav] = useState("home");
+  const [activeNav, setActiveNav] = useState("");
   const [hamburger, setHamburger] = useState(false);
   const [navBar, setNavBar] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     function handleScrollBackground() {
@@ -79,6 +81,7 @@ function Header({ scrollToSection, contact, home }) {
     scrollToSection(sectionRef);
   };
 
+  // console.log(window.location.pathname);
   return (
     <>
       <header className={` z-40  ${navBar ? "bg-white text-[#667085] bg-opacity-60" : "text-[#667085] bg-transparent"} h-[80px] flex-col 100:px-[50px] xl:px-[132px] fixed w-full z-20  flex justify-center`} scrollToSection={scrollToSection}>
@@ -110,7 +113,19 @@ function Header({ scrollToSection, contact, home }) {
                 </nav>
               </Link>
               {/* <Link to="/quote"> */}
-              <nav onClick={() => handleNavClick("contact", contact)} className={` ${activeNav === "contact" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} flex items-center gap-[8px] cursor-pointer `}>
+              <nav
+                onClick={() => {
+                  if (window.location.pathname === "/") {
+                    handleNavClick("contact", contact);
+                    window.scrollTo(0, 0);
+                    setHamburger(false);
+                  } else {
+                    // nav();
+                    navigate("/");
+                  }
+                }}
+                className={` ${activeNav === "contact" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} flex items-center gap-[8px] cursor-pointer `}
+              >
                 Contact
               </nav>
               {/* </Link> */}
@@ -119,7 +134,7 @@ function Header({ scrollToSection, contact, home }) {
           <section className="flex gap-[8px] items-center">
             {" "}
             <nav className="text-[16px] hover:underline hover:text-[#870AE6] px-[10px]  font-medium">
-              <a href="mailto:https://highflyers@gmail.com">Highflyers@gmail.com</a>
+              <a href="mailto:https://highflyers2024.consulting@gmail.com"> highflyers2024.consulting@gmail.com</a>
             </nav>
             <Link onClick={() => window.scrollTo(0, 0)} to="/quote">
               <div className="px-[18px] py-[10px] text-[16px] font-medium text-center w-fit h-fit bg-[#870AE6] text-[#fff] rounded-[8px]">Request a Quote</div>
@@ -194,9 +209,14 @@ function Header({ scrollToSection, contact, home }) {
                 <nav
                   className={`border-b border-b-gray-200 p-2  w-full ${activeNav === "contact" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
                   onClick={() => {
-                    handleNavClick("contact", contact);
-                    window.scrollTo(0, 0);
-                    setHamburger(false);
+                    if (window.location.pathname === "/") {
+                      handleNavClick("contact", contact);
+                      window.scrollTo(0, 0);
+                      setHamburger(false);
+                    } else {
+                      // nav();
+                      navigate("/");
+                    }
                   }}
                 >
                   Contact

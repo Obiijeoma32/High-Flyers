@@ -33,7 +33,7 @@ function AboutUs() {
           <div className=" gap-[48px] flex flex-col items-start  w-full">
             <div className=" flex flex-col items-start gap-[12px]">
               <h5 className=" text-purple-600 text-base font-semibold  leading-normal">About us</h5>
-              <h2 className="text-neutral-700 text-5xl font-semibold leading-[60px]">
+              <h2 className="text-neutral-700 100:text-[36px] 100:leading-[45px] md:text-5xl font-semibold md:leading-[60px]">
                 About<span className="text-purple-700 "> High-Flyers</span> Consulting Nigeria Limited.
               </h2>
             </div>
@@ -45,16 +45,20 @@ function AboutUs() {
               diverse needs
             </p>
           </div>
-          <div className="  w-full flex flex-col justify-center gap-[10px] items-center">
-            <div className=" absolute 100:top-[45%] 100:right-[3%] phone:top-[38%]  xl:top-[235px]  xl:right-[110px] w-24 h-24 bg-yellow-400" />
-            <div className=" flex justify-center z-20 relative items-center w-full gap-[10px]">
-              <img className=" 100:w-[49.3%] xl:w-[256px] xl:h-[176px] " src={hall} alt="High Flyers" />
-              <img className="100:w-[49.3%] xl:w-[256px] xl:h-[176px] " src={hall2} alt="High Flyers" />
+          <div className=" xl:w-[600px]  100:w-full flex flex-col justify-center  items-center">
+            <div className=" w-full mb-[-65px] flex justify-end items-end">
+              <div className="  w-24 h-24 bg-yellow-400" />
             </div>
-            <div className=" 100:w-full xl:w-[522px] xl:h-[263px] z-20 relative">
-              <img className="w-full" src={hall3} alt="High Flyers" />
+            <div className=" z-20 w-[90%] h-fit flex flex-col justify-center gap-[10px] items-center">
+              <div className=" flex justify-center  items-center w-full gap-[10px]">
+                <div className=" 100:w-[50%] 100:h-[20vh] xl:w-[256px] xl:h-[176px] " style={{ backgroundImage: `url(${hall})`, backgroundSize: "cover" }} />
+                <div className=" 100:w-[50%] 100:h-[20vh] xl:w-[256px] xl:h-[176px] " style={{ backgroundImage: `url(${hall2})`, backgroundSize: "cover" }} />
+              </div>
+              <div style={{ backgroundImage: `url(${hall3})`, backgroundSize: "cover" }} className=" 100:w-full 100:h-[25vh] xl:w-full xl:h-[263px] " />
             </div>
-            <div className=" absolute 100:top-[80%] phone:top-[84%] phone:right-[80%] 100:right-[76%] xl:top-[87%] xl:right-[590px] w-24 h-24 bg-yellow-400" />
+            <div className=" w-full mt-[-65px] flex justify-start items-start">
+              <div className="  w-24 h-24 bg-yellow-400" />
+            </div>{" "}
           </div>
           <p className=" 100:flex 1xl:hidden w-full text-neutral-500 text-xl font-normal  leading-loose">
             High-Flyers Consulting Nigeria Limited, established in 2011, is a leading socio-educational service provider. Our team comprises seasoned professionals in education and social services. We have diversified our services to include
