@@ -221,8 +221,10 @@ function Header({ scrollToSection, contact, home }) {
                 >
                   Contact
                 </nav>
-                <nav className="border-b border-b-gray-200 p-2  w-full text-[16px] hover:underline hover:text-[#870AE6]   font-medium">
-                  <a href="mailto:https://highflyers@gmail.com">Highflyers@gmail.com</a>
+                <nav className="border-b border-b-gray-200 p-2    w-full text-[16px] hover:underline hover:text-[#870AE6]   font-medium">
+                  <a className=" text-ellipsis" href="mailto:https://highflyers2024.consulting@gmail.com">
+                    Email
+                  </a>
                 </nav>
                 <Link to="/quote">
                   <div className="px-[18px] py-[10px] text-[16px] font-medium text-center w-fit h-fit bg-[#870AE6] text-[#fff] rounded-[8px]">Request a Quote</div>
