@@ -3,6 +3,7 @@ import hall from "./Images/hall1.jpeg";
 import Select from "react-select";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useState } from "react";
 // import axios from "axios";
 const services = [
   { value: "Academic Services", label: "Academic Services" },
@@ -17,13 +18,19 @@ function Quote() {
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),
-    email: Yup.string().email("Invalid email address").required("Email is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
     phoneNumber: Yup.string().required("Phone number is required"),
     companyName: Yup.string(),
     services: Yup.object().required("Service is required"),
     additionalComments: Yup.string(),
-    preferredContactMethod: Yup.object().required("Preferred contact method is required"),
+    preferredContactMethod: Yup.object().required(
+      "Preferred contact method is required"
+    ),
   });
+
+  const [isLoading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -38,26 +45,36 @@ function Quote() {
     },
     validationSchema,
     onSubmit: async (values) => {
-      console.log(values);
-
+      // console.log(values);
+      setLoading(true);
       const formData = {
-        ...values,
+        email: values.email,
+
+        firstName: values.firstName,
+        lastName: values.lastName,
+        companyName: values.companyName,
+        phoneNumber: values.phoneNumber,
+        services: values.services.label,
+        additionalComments: values.additionalComments,
+        preferredContactMethod: values.preferredContactMethod.label,
       };
+
+      // console.log(formData);
       try {
-        const response = await fetch("http://localhost:5000/api/contact", {
+        await fetch("https://simple-mailer-bmcd.onrender.com/v1/recieve-quote", {
           method: "POST",
           headers: {
-            Accept: "application/json, text/plain, */*",
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
+        }).then((res) => {
+          setLoading(false);
+          if (res.status === 200) {
+            console.log("success");
+          } else {
+            console.log("error");
+          }
         });
-
-        if (response.status === 200) {
-          console.log("success");
-        } else {
-          console.log("error");
-        }
       } catch (error) {
         console.log("An Error Occurred: ", error);
       }
@@ -71,14 +88,29 @@ function Quote() {
           <div className=" 100:px-[24px] md:px-[62px] flex items-center justify-between w-full">
             <Link to="/">
               <div className=" flex gap-[8px] text-purple-700 text-[16px] font-medium justify-center items-center">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12.5 4.99991C12.5 4.99991 7.50001 8.68235 7.5 9.99995C7.49999 11.3175 12.5 14.9999 12.5 14.9999" stroke="#870AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.5 4.99991C12.5 4.99991 7.50001 8.68235 7.5 9.99995C7.49999 11.3175 12.5 14.9999 12.5 14.9999"
+                    stroke="#870AE6"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
                 Back
               </div>
             </Link>
             <nav className=" p-2   text-[16px] hover:underline hover:text-[#870AE6]   font-medium">
-              <a href="mailto:https://highflyers2024.consulting@gmail.com"> highflyers2024.consulting@gmail.com</a>
+              <a href="mailto:https://highflyers2024.consulting@gmail.com">
+                {" "}
+                highflyers2024.consulting@gmail.com
+              </a>
             </nav>
           </div>
         </section>
@@ -86,13 +118,24 @@ function Quote() {
           <div className=" flex justify-between gap-[64px] items-center 100: w-[85%] xl:w-[1200px]">
             <div className=" flex-col gap-[48px] mt-[64px] lg:pr-[650px] justify-center items-center flex w-full">
               <div className="w-full flex flex-col items-start gap-[12px]">
-                <h2 className="text-neutral-700 text-[36px] font-semibold leading-[45px]">Your Success Starts Now </h2>
-                <p className="  text-neutral-500 text-[20px] font-normal  leading-[30px">Find tailored solutions at unbeatable rates to kickstart your journey to success. </p>
+                <h2 className="text-neutral-700 text-[36px] font-semibold leading-[45px]">
+                  Your Success Starts Now{" "}
+                </h2>
+                <p className="  text-neutral-500 text-[20px] font-normal  leading-[30px">
+                  Find tailored solutions at unbeatable rates to kickstart your
+                  journey to success.{" "}
+                </p>
               </div>
-              <form onSubmit={formik.handleSubmit} className="flex flex-col gap-[24px] w-full">
+              <form
+                onSubmit={formik.handleSubmit}
+                className="flex flex-col gap-[24px] w-full"
+              >
                 <div className="w-full 100:flex-col md:flex-row flex justify-center items-center gap-[32px]">
                   <section className="gap-[6px] flex flex-col w-full">
-                    <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="firstName">
+                    <label
+                      className="text-neutral-600 text-sm font-medium leading-tight"
+                      htmlFor="firstName"
+                    >
                       First Name
                     </label>
                     <input
@@ -102,10 +145,15 @@ function Quote() {
                       id="firstName"
                       {...formik.getFieldProps("firstName")}
                     />
-                    {formik.touched.firstName && formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
+                    {formik.touched.firstName && formik.errors.firstName ? (
+                      <div>{formik.errors.firstName}</div>
+                    ) : null}
                   </section>
                   <section className="gap-[6px] flex flex-col w-full">
-                    <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="lastName">
+                    <label
+                      className="text-neutral-600 text-sm font-medium leading-tight"
+                      htmlFor="lastName"
+                    >
                       Last Name
                     </label>
                     <input
@@ -115,11 +163,16 @@ function Quote() {
                       id="lastName"
                       {...formik.getFieldProps("lastName")}
                     />
-                    {formik.touched.lastName && formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+                    {formik.touched.lastName && formik.errors.lastName ? (
+                      <div>{formik.errors.lastName}</div>
+                    ) : null}
                   </section>
                 </div>
                 <section className="gap-[6px] flex flex-col w-full">
-                  <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="email">
+                  <label
+                    className="text-neutral-600 text-sm font-medium leading-tight"
+                    htmlFor="email"
+                  >
                     Email
                   </label>
                   <input
@@ -129,10 +182,15 @@ function Quote() {
                     id="email"
                     {...formik.getFieldProps("email")}
                   />
-                  {formik.touched.email && formik.errors.email ? <div className=" text-[#B7192C]">{formik.errors.email}</div> : null}
+                  {formik.touched.email && formik.errors.email ? (
+                    <div className=" text-[#B7192C]">{formik.errors.email}</div>
+                  ) : null}
                 </section>
                 <section className="gap-[6px] flex flex-col w-full">
-                  <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="phoneNumber">
+                  <label
+                    className="text-neutral-600 text-sm font-medium leading-tight"
+                    htmlFor="phoneNumber"
+                  >
                     Phone number
                   </label>
                   <input
@@ -142,10 +200,15 @@ function Quote() {
                     id="phoneNumber"
                     {...formik.getFieldProps("phoneNumber")}
                   />
-                  {formik.touched.phoneNumber && formik.errors.phoneNumber ? <div>{formik.errors.phoneNumber}</div> : null}
+                  {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+                    <div>{formik.errors.phoneNumber}</div>
+                  ) : null}
                 </section>
                 <section className="gap-[6px] flex flex-col w-full">
-                  <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="companyName">
+                  <label
+                    className="text-neutral-600 text-sm font-medium leading-tight"
+                    htmlFor="companyName"
+                  >
                     Company name (if applicable)
                   </label>
                   <input
@@ -157,7 +220,10 @@ function Quote() {
                   />
                 </section>
                 <section className="gap-[6px] flex flex-col w-full">
-                  <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="services">
+                  <label
+                    className="text-neutral-600 text-sm font-medium leading-tight"
+                    htmlFor="services"
+                  >
                     Services
                   </label>
                   <Select
@@ -190,12 +256,19 @@ function Quote() {
                     }}
                     options={services}
                     value={formik.values.services}
-                    onChange={(option) => formik.setFieldValue("services", option)}
+                    onChange={(option) =>
+                      formik.setFieldValue("services", option)
+                    }
                   />
-                  {formik.touched.services && formik.errors.services ? <div>{formik.errors.services.label}</div> : null}
+                  {formik.touched.services && formik.errors.services ? (
+                    <div>{formik.errors.services.label}</div>
+                  ) : null}
                 </section>
                 <section className="gap-[6px] flex flex-col w-full">
-                  <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="additionalComments">
+                  <label
+                    className="text-neutral-600 text-sm font-medium leading-tight"
+                    htmlFor="additionalComments"
+                  >
                     Additional comments
                   </label>
                   <textarea
@@ -205,7 +278,10 @@ function Quote() {
                   />
                 </section>
                 <section className="gap-[6px] flex flex-col w-full">
-                  <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="preferredContactMethod">
+                  <label
+                    className="text-neutral-600 text-sm font-medium leading-tight"
+                    htmlFor="preferredContactMethod"
+                  >
                     Preferred contact method
                   </label>
                   <Select
@@ -238,22 +314,36 @@ function Quote() {
                     }}
                     options={contactType}
                     value={formik.values.preferredContactMethod}
-                    onChange={(option) => formik.setFieldValue("preferredContactMethod", option)}
+                    onChange={(option) =>
+                      formik.setFieldValue("preferredContactMethod", option)
+                    }
                   />
-                  {formik.touched.preferredContactMethod && formik.errors.preferredContactMethod ? <div>{formik.errors.preferredContactMethod.label}</div> : null}
+                  {formik.touched.preferredContactMethod &&
+                  formik.errors.preferredContactMethod ? (
+                    <div>{formik.errors.preferredContactMethod.label}</div>
+                  ) : null}
                 </section>
                 <section className="mt-[38px] items-center justify-between gap-[16px] flex w-full">
                   <Link className="w-full" to="/">
-                    <div className="px-7 w-full text-base font-medium border-solid border-[1px] border-purple-700 text-center justify-center flex items-center h-[48px] text-gray-900 rounded-[8px]">Cancel</div>
+                    <div className="px-7 w-full text-base font-medium border-solid border-[1px] border-purple-700 text-center justify-center flex items-center h-[48px] text-gray-900 rounded-[8px]">
+                      Cancel
+                    </div>
                   </Link>
-                  <button type="submit" className="px-7 w-full text-base font-medium text-center justify-center flex items-center h-[48px] bg-[#870AE6] text-[#fff] rounded-[8px]">
-                    Submit
+                  <button
+                    type="submit"
+                    className="px-7 w-full text-base font-medium text-center justify-center flex items-center h-[48px] bg-[#870AE6] text-[#fff] rounded-[8px]"
+                  >
+                   {isLoading? "LOADING...": "Submit"}
                   </button>
                 </section>
               </form>
             </div>
             <div className=" 100:hidden lg:block fixed top-[124px] left-[750px]  w-full h-full">
-              <img alt="High-Flyers" className="w-[650px] h-[680px] " src={hall} />
+              <img
+                alt="High-Flyers"
+                className="w-[650px] h-[680px] "
+                src={hall}
+              />
             </div>
           </div>
         </div>
