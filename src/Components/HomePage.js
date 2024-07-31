@@ -130,7 +130,7 @@ function HomePage() {
                 </svg>
                 Showreel
               </nav>
-              <a className="100:w-full md:w-40 " href="https://wa.me/07071859574" target="_blank">
+              <a className="100:w-full md:w-40 " href="https://wa.me/23407071859574" target="_blank">
                 <div className="px-7 w-full whitespace-nowrap  text-[16px] justify-center font-medium text-center flex items-center  h-14 bg-[#870AE6] text-[#fff] rounded-[8px]">Chat with us</div>
               </a>
             </section>
