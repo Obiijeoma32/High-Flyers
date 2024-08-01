@@ -192,8 +192,15 @@ function HomePage() {
                 </svg>
               </div>
             </div>
-            <iframe autoSave="allow" src="https://drive.google.com/file/d/1LtssX8-PKck8ErO3sOw1BDcpkMIGbuZR/preview" className=" w-[85%] border-purple-50 rounded-lg border-[2px] 100:h-[30vh] md:h-[80vh]" allow="autoplay" />
-          </div>
+           <iframe
+              className="w-[80%] border-purple-50 rounded-lg border-[2px] h-[30vh] md:h-[80vh]"
+              src="https://www.youtube.com/embed/P7u79X1NGUs?si=c5HJcTDJ3G-I9Sdw"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            />     </div>
         </>
       )}
     </>
