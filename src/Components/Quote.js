@@ -25,7 +25,7 @@ function Quote() {
     additionalComments: Yup.string(),
     preferredContactMethod: Yup.object().required("Preferred contact method is required"),
   });
-  const [save, setSave] = useState(true);
+  const [save, setSave] = useState(false);
 
   const [isLoading, setLoading] = useState(false);
 
@@ -67,8 +67,8 @@ function Quote() {
         }).then((res) => {
           setLoading(false);
           if (res.status === 200) {
-            setSave(true);
             console.log("success");
+            setSave(true);
           } else {
             console.log("error");
           }
@@ -105,7 +105,7 @@ function Quote() {
                 <p className="  text-neutral-500 text-[20px] font-normal  leading-[30px">Find tailored solutions at unbeatable rates to kickstart your journey to success. </p>
               </div>
               <form onSubmit={formik.handleSubmit} className="flex flex-col gap-[24px] w-full">
-                <div className="w-full 100:flex-col md:flex-row flex justify-center items-center gap-[32px]">
+                <div className="w-full 100:flex-col md:flex-row flex justify-start items-start gap-[32px]">
                   <section className="gap-[6px] flex flex-col w-full">
                     <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="firstName">
                       First Name
@@ -117,7 +117,7 @@ function Quote() {
                       id="firstName"
                       {...formik.getFieldProps("firstName")}
                     />
-                    {formik.touched.firstName && formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
+                    {formik.touched.firstName && formik.errors.firstName ? <div className=" text-red-400 text-base">{formik.errors.firstName}</div> : null}
                   </section>
                   <section className="gap-[6px] flex flex-col w-full">
                     <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="lastName">
@@ -130,7 +130,7 @@ function Quote() {
                       id="lastName"
                       {...formik.getFieldProps("lastName")}
                     />
-                    {formik.touched.lastName && formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+                    {formik.touched.lastName && formik.errors.lastName ? <div className=" text-red-400 text-base">{formik.errors.lastName}</div> : null}
                   </section>
                 </div>
                 <section className="gap-[6px] flex flex-col w-full">
@@ -157,7 +157,7 @@ function Quote() {
                     id="phoneNumber"
                     {...formik.getFieldProps("phoneNumber")}
                   />
-                  {formik.touched.phoneNumber && formik.errors.phoneNumber ? <div>{formik.errors.phoneNumber}</div> : null}
+                  {formik.touched.phoneNumber && formik.errors.phoneNumber ? <div className=" text-red-400 text-base">{formik.errors.phoneNumber}</div> : null}
                 </section>
                 <section className="gap-[6px] flex flex-col w-full">
                   <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="companyName">
@@ -207,7 +207,7 @@ function Quote() {
                     value={formik.values.services}
                     onChange={(option) => formik.setFieldValue("services", option)}
                   />
-                  {formik.touched.services && formik.errors.services ? <div>{formik.errors.services.label}</div> : null}
+                  {formik.touched.services && formik.errors.services ? <div className=" text-red-400 text-base">{formik.errors.services.label}</div> : null}
                 </section>
                 <section className="gap-[6px] flex flex-col w-full">
                   <label className="text-neutral-600 text-sm font-medium leading-tight" htmlFor="additionalComments">
@@ -255,7 +255,7 @@ function Quote() {
                     value={formik.values.preferredContactMethod}
                     onChange={(option) => formik.setFieldValue("preferredContactMethod", option)}
                   />
-                  {formik.touched.preferredContactMethod && formik.errors.preferredContactMethod ? <div>{formik.errors.preferredContactMethod.label}</div> : null}
+                  {formik.touched.preferredContactMethod && formik.errors.preferredContactMethod ? <div className=" text-red-400 text-base">{formik.errors.preferredContactMethod.label}</div> : null}
                 </section>
                 <section className="mt-[38px] items-center justify-between gap-[16px] flex w-full">
                   <Link className="w-full" to="/">
@@ -268,7 +268,7 @@ function Quote() {
               </form>
             </div>
             <div className=" 100:hidden lg:block fixed top-[124px] left-[750px]  w-full h-full">
-              <img alt="High-Flyers" className="w-[650px] h-[680px] " src={hall} />
+              <img alt="High-Flyers" className="w-[650px] h-[85%] " src={hall} />
             </div>
           </div>
         </div>

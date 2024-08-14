@@ -13,7 +13,7 @@ function WhyChooseUs() {
           <div className=" 100:justify-center 100:items-center 100:text-center xl:justify-start xl:items-start xl:text-left 100:w-[100%] md:w-[80%] flex flex-col gap-[40px] ">
             <section className=" w-full flex gap-[16px]  100:items-center xl:items-start flex-col ">
               <h4 className=" w-full flex gap-[10px] 100:flex-col md:flex-row 100:justify-center xl:justify-start items-center  text-neutral-700 text-4xl font-semibold  leading-10">
-                Why Choose <span className="w-56 h-14 p-2.5 bg-yellow-200 rounded-lg justify-center text-purple-700 flex">High-Flyers</span>
+                Why Choose <span className="w-56 h-14 p-2.5 whitespace-nowrap bg-yellow-200 rounded-lg justify-center text-purple-700 flex">High-Flyers</span>
               </h4>
               <p className=" 100:w-full md:w-[78%] lg:w-[552px]  text-neutral-400 text-xl font-normal  leading-loose">
                 Experience Excellence in Academic Services & Event Management with High-Flyers Consulting. Our seasoned team and top-notch facilities ensure unmatched results for your educational and corporate endeavors.{" "}

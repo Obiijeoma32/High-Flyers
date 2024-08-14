@@ -5,6 +5,7 @@ import HomePage from "./Components/HomePage";
 import AboutUs from "./Components/AboutUs";
 import Quote from "./Components/Quote";
 import Services from "./Components/Services";
+import Terms from "./Components/Terms";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/quote" element={<Quote />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </BrowserRouter>
     </>

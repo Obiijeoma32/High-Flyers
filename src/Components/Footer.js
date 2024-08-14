@@ -13,11 +13,7 @@ function Footer() {
                 <Link onClick={() => window.scrollTo(0, 0)} to="/about">
                   <h4 className=" hover:text-purple-700 hover:underline text-neutral-500 text-base font-medium  leading-normal">About us</h4>
                 </Link>
-                <Link
-                  onClick={() => window.scrollTo(0, 0)}
-                  to="                
-"
-                >
+                <Link onClick={() => window.scrollTo(0, 0)} to="/services">
                   <h4 className=" hover:text-purple-700 hover:underline text-neutral-500 text-base font-medium  leading-normal">Services</h4>
                 </Link>
                 <h4 className="text-neutral-500 text-base font-medium  leading-normal">Contact</h4>
@@ -35,8 +31,12 @@ function Footer() {
             <section className=" 100:w-[220px] lg:w-full  flex-col gap-[16px] flex  items-start">
               <h3 className="self-stretch text-zinc-500 text-sm font-semibold  leading-tight">Legal</h3>
               <div className=" w-full flex-col gap-[12px] flex  items-start">
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">Terms</h4>
-                <h4 className="text-neutral-500 text-base font-medium  leading-normal">Privacy</h4>
+                <Link onClick={() => window.scrollTo(0, 0)} to="/terms">
+                  <h4 className="hover:text-purple-700 hover:underline text-neutral-500 text-base font-medium  leading-normal">Terms</h4>
+                </Link>
+                <Link onClick={() => window.scrollTo(0, 0)} to="/terms">
+                  <h4 className="hover:text-purple-700 hover:underline text-neutral-500 text-base font-medium  leading-normal">Privacy</h4>
+                </Link>
                 <h4 className="text-neutral-500 text-base font-medium  leading-normal">Cookies</h4>
               </div>
             </section>{" "}
