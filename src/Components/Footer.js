@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <div className=" h-fit w-full py-[64px] flex bg-neutral-100 justify-center  items-center">
-        <div className=" flex flex-col justify-center 100:w-[90%] xl:w-[85%] gap-[64px] 100:items-start xl:items-center">
+        <div className=" flex flex-col justify-center 100:w-[90%] 1xl:w-[1280px] xl:w-[85%] gap-[64px] 100:items-start xl:items-center">
           <div className="flex 100:flex-wrap xl:flex-nowrap  xl:flex-row pl-[52px] 100:gap-[32px] justify-start w-full items-start">
             <section className=" 100:w-[220px] lg:w-full  flex-col gap-[16px] flex  items-start">
               <h3 className="self-stretch text-zinc-500 text-sm font-semibold  leading-tight">Company</h3>

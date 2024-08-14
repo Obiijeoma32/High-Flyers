@@ -47,7 +47,7 @@ function Newsletter() {
   return (
     <>
       <div className="w-full h-fit py-24 bg-purple-800  justify-center items-center  flex">
-        <section className=" 100:w-[90%] md:w-[85%] 100:flex-col 100:gap-[20px] xl:flex-row flex justify-between items-start">
+        <section className=" 100:w-[90%] md:w-[85%] 100:flex-col 1xl:w-[1250px] 100:gap-[20px] xl:flex-row flex justify-between items-start">
           <div className=" w-full flex flex-col gap-[20px] items-start">
             <h3 className=" text-white text-4xl font-semibold leading-10">Sign up for our newsletter</h3>
             <p className=" text-purple-200 text-xl font-normal ">Be the first to know about releases and industry news and insights.</p>
