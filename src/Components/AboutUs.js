@@ -29,7 +29,7 @@ function AboutUs() {
     <>
       <Header scrollToSection={scrollToSection} home={home} contact={contact} />
       <div className=" w-full flex justify-center 100:pt-[100px] lg:pt-[180px] items-center">
-        <section className=" 100:gap-[62px] xl:gap-0 100:w-[85%] xl:w-[90%] 100:flex-col xl:flex-row flex justify-between items-center">
+        <section className=" 100:gap-[62px] xl:gap-0 100:w-[85%] xl:w-[90%] 1xl:w-[1200px] 100:flex-col xl:flex-row flex justify-between items-center">
           <div className=" gap-[48px] flex flex-col items-start  w-full">
             <div className=" flex flex-col items-start gap-[12px]">
               <h5 className=" text-purple-600 text-base font-semibold  leading-normal">About us</h5>
