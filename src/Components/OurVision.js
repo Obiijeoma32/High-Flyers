@@ -23,7 +23,7 @@ function OurVision() {
           </div>
           <div className=" w-full flex flex-col items-start justify-start gap-[24px]">
             <h4 className=" text-purple-900 text-base font-semibold leading-normal">Our Vision</h4>
-            <p className="md:w-[502px] 2xl:w-[600px] 100:w-full text-neutral-700 100:text-[36px] sm:text-5xl font-semibold leading-[54px]">To be a key player in the provision of top notch africa services in africa</p>
+            <p className="md:w-[502px] 2xl:w-[600px] 100:w-full text-neutral-700 100:text-[36px] sm:text-5xl font-semibold leading-[54px]">To be a key player in the provision of top notch services in Africa</p>
           </div>
         </section>
       </div>

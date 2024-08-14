@@ -61,7 +61,7 @@ function AboutUs() {
             </div>{" "}
           </div>
           <p className=" 100:flex 1xl:hidden w-full text-neutral-500 text-xl font-normal  leading-loose">
-            High-Flyers Consulting Nigeria Limited, established in 2011, is a leading socio-educational service provider. Our team comprises seasoned professionals in education and social services. We have diversified our services to include
+            High-Flyers Consulting Nigeria Limited, established in 2012, is a leading socio-educational service provider. Our team comprises seasoned professionals in education and social services. We have diversified our services to include
             exceptional facilities for various events such as conferences, seminars, training sessions, interviews, board meetings, corporate gatherings, and exhibitions.
             <br />
             Situated in a prime location very close to renowned institutions like the University of Ibadan, NISER, Ibadan Polytechnic, and Federal College of Statistics, our facility is not only easily accessible but also purpose-built to cater for

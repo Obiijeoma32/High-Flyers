@@ -53,7 +53,7 @@ function Features() {
         </svg>
       ),
       title: "State-of-the Art Facilities",
-      description: "Our facilities cater to both corporate and academic events, providing a versatile space designed for sophistication and functionality.",
+      description: "Our facilities cater for both corporate and academic events, providing a versatile space designed for sophistication and functionality.",
     },
     {
       id: 3,

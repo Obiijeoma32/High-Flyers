@@ -169,29 +169,30 @@ function Header({ scrollToSection, contact, home }) {
                 <img className="w-[70%]" src={logo2} alt="High Flyers" />
               </Link>
               <div className="flex px-[20px]  flex-col gap-[24px] items-start w-full ">
-                <nav
-                  className={`border-b border-b-gray-200 p-2  w-full ${activeNav === "home" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                    // handleNavClick("home", home);
-                    setHamburger(false);
-                  }}
-                >
-                  Home
-                </nav>
-                <Link to="/about">
+                <Link className="w-full" onClick={() => window.scrollTo(0, 0)} to="/">
                   <nav
-                    className={`border-b border-b-gray-200 p-2  w-full ${activeNav === "aboutUs" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
+                    className={`border-b border-b-gray-200 p-2  w-full ${activeNav === "home" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
                     onClick={() => {
                       window.scrollTo(0, 0);
-                      // handleNavClick("aboutUs", aboutUs);
+                      // handleNavClick("home", home);
                       setHamburger(false);
                     }}
                   >
-                    About Us
+                    Home
                   </nav>
                 </Link>
-                <Link onClick={() => window.scrollTo(0, 0)} to="/services">
+                <Link
+                  className="w-full"
+                  to="/about"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    // handleNavClick("aboutUs", aboutUs);
+                    setHamburger(false);
+                  }}
+                >
+                  <nav className={`border-b border-b-gray-200 p-2  w-full ${activeNav === "aboutUs" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}>About Us</nav>
+                </Link>
+                <Link className="w-full" onClick={() => window.scrollTo(0, 0)} to="/services">
                   <nav
                     className={`border-b border-b-gray-200 p-2 flex justify-start gap-[8px] items-center w-full ${activeNav === "services" ? " bg-[#FFFD86]  w-fit px-[8px] p-[4px] rounded-[8px] text-[#870AE6]" : ""} `}
                     onClick={() => {

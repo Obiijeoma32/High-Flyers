@@ -156,7 +156,7 @@ function HomePage() {
               <h2 className=" text-center text-neutral-700 100:text-3xl md:text-4xl font-semibold  leading-10">Empowering Education and Events: Unlocking Opportunities, Building Communities</h2>
             </div>
             <p className=" 100:w-[100%] md:w-[75%] text-center text-neutral-500 100:text-lg md:text-xl font-normal font-['Inter'] leading-loose">
-              High-Flyers Consulting Nigeria Limited is a educational and social sciences service provider incorporated in 2011. Our team comprises professionals in education and social services. We offer excellent facilities for various events and
+              High-Flyers Consulting Nigeria Limited is an educational. and social sciences service provider incorporated in 2012. Our team comprises professionals in education and social services. We offer excellent facilities for various events and
               gatherings.
             </p>
           </section>
@@ -192,7 +192,7 @@ function HomePage() {
                 </svg>
               </div>
             </div>
-           <iframe
+            <iframe
               className="w-[80%] border-purple-50 rounded-lg border-[2px] h-[30vh] md:h-[80vh]"
               src="https://www.youtube.com/embed/P7u79X1NGUs?si=c5HJcTDJ3G-I9Sdw"
               title="YouTube video player"
@@ -200,7 +200,8 @@ function HomePage() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
-            />     </div>
+            />{" "}
+          </div>
         </>
       )}
     </>

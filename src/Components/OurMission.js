@@ -7,7 +7,7 @@ function OurMission() {
         <section className=" 100:w-[80%] xl:w-[90%] 1xl:w-[1280px] flex flex-col justify-center gap-[32px] items-center">
           <h4 className=" text-purple-900 text-base font-semibold leading-normal">Our Mission</h4>
           <h3 className="w-full text-center text-neutral-700 100:text-[30px] 100:leading-[40px] md:text-[48px] md:leading-[60px] font-medium ">
-            To be among the topmost providers of socio educational services, leveraging on technology, making academic consulting and advocacy available to it’s clients and promoting a culture of excellence
+            To be among the topmost providers of socio educational services, leveraging on technology, making academic consulting and advocacy available to its clients and promoting a culture of excellence
           </h3>
           <section className=" flex flex-col gap-[16px] justify-center items-center">
             <img className=" w-[64px] rounded-full " src={lead} alt="Lead Consultant" />
