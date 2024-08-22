@@ -123,14 +123,17 @@ function HomePage() {
               </p>
             </div>
             <section className=" gap-[12px] 100:flex-col-reverse phone:flex-row h-fit w-fit flex items-center">
-              <nav onClick={() => setVideo(true)} className="100:w-full cursor-pointer md:w-44 h-14 rounded-lg  px-7 py-4 bg-white  shadow border border-zinc-400 justify-center items-center gap-3 flex text-neutral-500 text-lg font-mediumleading-7">
+              <nav
+                onClick={() => setVideo(true)}
+                className="100:w-full md:w-fit cursor-pointer  h-14 rounded-lg  px-7 py-4 bg-white  shadow border border-zinc-400 justify-center items-center gap-3 flex text-neutral-500 text-lg font-medium leading-7"
+              >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#4F4F4F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M10 8L16 12L10 16V8Z" stroke="#4F4F4F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                Showreel
+                Virtual Tour
               </nav>
-              <a className="100:w-full md:w-40 " href="https://wa.me/23407071859574" target="_blank">
+              <a className="100:w-full md:w-40 " href="https://wa.me/23407071859574" target="blank">
                 <div className="px-7 w-full whitespace-nowrap  text-[16px] justify-center font-medium text-center flex items-center  h-14 bg-[#870AE6] text-[#fff] rounded-[8px]">Chat with us</div>
               </a>
             </section>
